@@ -1,0 +1,29 @@
+[user]
+        name = Maxim Styushin
+        email = makcimkos@gmail.com
+[core]
+	editor = /usr/bin/vim
+[color]
+	ui = true
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[gitreview]
+	username = mstyushin
+[branch]
+	autosetuprebase = always
+[branch "master"]
+	rebase = true
+[branch "dev"]
+	rebase = true
+[cola]
+	spellcheck = false
+[gui]
+	editor = /usr/bin/vim
+	historybrowser = gitk
+[diff]
+	tool = diff
+[merge]
+	tool = diff
+[http]
+	sslVerify = true
+
