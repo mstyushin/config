@@ -80,7 +80,7 @@ let g:pymode_rope_enable_autoimport = 1
 " open definitions found in a new buffer
 let g:pymode_rope_goto_definition_cmd = 'e'
 
-# default goto definition binding really sucks
+" default goto definition binding really sucks
 let g:pymode_rope_goto_definition_bind = 'gd'
 
 " documentation
@@ -113,4 +113,11 @@ let g:pymode_syntax_builtin_types = g:pymode_syntax_all
 let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
 let g:pymode_syntax_docstrings = g:pymode_syntax_all
 " ==================================================
+
+" ==================================================
+" NERDTree config
+" ==================================================
+
+" Load NERDTree only if vim is run without arguments
+autocmd VimEnter * if !argc() | NERDTree | endif
 
