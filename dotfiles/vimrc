@@ -29,7 +29,7 @@ set statusline=\ %f
 set laststatus=2
 
 " enable cooler colors
-set termguicolors
+"set termguicolors
 
 " new splits open below the current window
 set splitbelow
