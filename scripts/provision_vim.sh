@@ -32,9 +32,14 @@ if [[ ! -d "${VIMHOME}/pack/plugins/start/nerdtree" ]]; then
     cd ${VIMHOME}/pack/plugins/start/nerdtree && git checkout ${NERDTREE_V}
 fi
 
-# install nerdtree plugin
+# install nerdtree-git plugin
 if [[ ! -d "${VIMHOME}/pack/plugins/start/nerdtree-git-plugin" ]]; then
     git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git ${VIMHOME}/pack/plugins/start/nerdtree-git-plugin 
+fi
+
+# install vim-terraform
+if [[ ! -d "${VIMHOME}/pack/plugins/start/vim-terraform" ]]; then
+     git clone git@github.com:hashivim/vim-terraform.git ${VIMHOME}/pack/plugins/start/vim-terraform
 fi
 
 # rebuild helptags for everything just in case
