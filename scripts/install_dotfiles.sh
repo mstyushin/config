@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKDIR=$(dirname -- "$0")
+WORKDIR=$( cd $( dirname ${BASH_SOURCE[0]})/../ && pwd )
 DOTFILES_DIR="${WORKDIR}/dotfiles"
 
 while [[ "$1" != "" ]]; do
