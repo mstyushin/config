@@ -1,6 +1,41 @@
+" show line numbers
 set number
+
+" pasting works better in insert mode
 set paste
+
+" allow language plugins to work correctly
 filetype plugin indent on
+
+" display title of current file in terminal title bar
+set title
+
+" tab = 4 spaces
+set tabstop=4
+
+" shift+> = 4 spaces
+set shiftwidth=4
+
+" tab uses spaces
+set expandtab
+
+" line number of cursor blinks
+set cursorline
+
+" Format status line to show current file
+set statusline=\ %f
+
+" Always show status line
+set laststatus=2
+
+" enable cooler colors
+set termguicolors
+
+" new splits open below the current window
+set splitbelow
+
+" integrate vim clipboard with system clipboard
+set clipboard+=unnamed
 
 " automatically highlight variable your cursor is on
 let g:go_auto_sameids = 0
