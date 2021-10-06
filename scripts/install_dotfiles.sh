@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DOTFILES_DIR="./dotfiles"
+WORKDIR=$(dirname -- "$0")
+DOTFILES_DIR="${WORKDIR}/dotfiles"
 
 while [[ "$1" != "" ]]; do
   case $1 in
