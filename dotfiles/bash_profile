@@ -6,6 +6,62 @@ export PS1="@:\W$ "
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export GOPATH=/home/mstyushin/workspace/go
-export PATH=${PATH}:/home/mstyushin/opt/go/bin:${GOPATH}/bin
+export GOPATH=${HOME}/workspace/go
+export PATH=${PATH}:${HOME}/opt/go/bin:${GOPATH}/bin
+
+if [[ ${OSTYPE} == "darwin20" ]]; then
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
+  export M2_HOME=/opt/maven
+  export SCALA_HOME=/opt/scala/current
+  export GROOVY_HOME=/opt/groovy/default
+  export ANDROID_SDK_ROOT=${HOME}/Library/Android/sdk
+  export GRADLE_HOME=/opt/gradle
+  export DOCKER_BUILDKIT=0
+  export PATH=/Applications/MySQLWorkbench.app/Contents/MacOS:${GRADLE_HOME}/bin:${GOPATH}/bin:${GROOVY_HOME}/bin:/usr/local/go/bin:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/sbt/current/bin:~/bin:~/.local/bin:~/workspace/myprojects/dbmigration-runner/bin:$PATH
+  
+  # pip should only run if there is a virtualenv currently activated
+  export PIP_REQUIRE_VIRTUALENV=true
+  
+  [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+  
+  gpip(){
+     PIP_REQUIRE_VIRTUALENV="" pip "$@"
+  }
+  
+  export EDITOR="/usr/bin/vim"
+  export HOMEBREW_NO_ANALYTICS=1
+  
+  
+  #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  
+  #source ${HOME}/.ghcup/env
+  
+  #export NVM_DIR="$HOME/.nvm"
+  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  
+  #nvm use default
+  
+  export PATH="$HOME/.cargo/bin:$PATH"
+  
+  #source ${HOME}/opt/google-cloud-sdk/path.bash.inc
+  #source ${HOME}/opt/google-cloud-sdk/completion.bash.inc
+
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  #__conda_setup="$('${HOME}/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+  #if [ $? -eq 0 ]; then
+  #    eval "$__conda_setup"
+  #else
+  #    if [ -f "${HOME}/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+  #        . "${HOME}/opt/anaconda3/etc/profile.d/conda.sh"
+  #    else
+  #        export PATH="${HOME}/opt/anaconda3/bin:$PATH"
+  #    fi
+  #fi
+  #unset __conda_setup
+  # <<< conda initialize <<<
+  
+  #source <(kubectl completion bash)
+fi
 
