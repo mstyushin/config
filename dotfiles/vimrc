@@ -8,6 +8,8 @@ set number
 set paste
 
 " allow language plugins to work correctly
+filetype on
+filetype plugin on
 filetype plugin indent on
 
 " display title of current file in terminal title bar
@@ -40,6 +42,10 @@ set splitbelow
 " integrate vim clipboard with system clipboard
 set clipboard+=unnamed
 
+" ==================================================
+" go-vim config
+" ==================================================
+
 " automatically highlight variable your cursor is on
 let g:go_auto_sameids = 0
 
@@ -52,48 +58,59 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
+" ==================================================
 
+" ==================================================
 " python-mode config
+" ==================================================
+
 " python executables for different plugins
-let g:pymode_python='python3'
-let g:syntastic_python_python_exec='python3'
+let g:pymode_python = 'python3'
+let g:syntastic_python_python_exec = 'python3'
 
 " rope
-let g:pymode_rope=0
-let g:pymode_rope_completion=0
-let g:pymode_rope_complete_on_dot=0
-let g:pymode_rope_auto_project=0
-let g:pymode_rope_enable_autoimport=0
-let g:pymode_rope_autoimport_generate=0
-let g:pymode_rope_guess_project=0
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+"let g:pymode_rope_auto_project=0
+let g:pymode_rope_enable_autoimport = 1
+"let g:pymode_rope_autoimport_generate=0
+"let g:pymode_rope_guess_project=0
+
+" open definitions found in a new buffer
+let g:pymode_rope_goto_definition_cmd = 'e'
+
+# default goto definition binding really sucks
+let g:pymode_rope_goto_definition_bind = 'gd'
 
 " documentation
-let g:pymode_doc=0
-let g:pymode_doc_bind='K'
+let g:pymode_doc = 1
+let g:pymode_doc_bind = 'K'
 
 " lints
-let g:pymode_lint=0
+let g:pymode_lint = 1
 
 " virtualenv
-let g:pymode_virtualenv=1
+let g:pymode_virtualenv = 1
 
 " syntax highlight
-let g:pymode_syntax=1
-let g:pymode_syntax_slow_sync=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_print_as_function=g:pymode_syntax_all
-let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
-let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
-let g:pymode_syntax_highlight_self=g:pymode_syntax_all
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_formatting=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=g:pymode_syntax_all
-let g:pymode_syntax_string_format=g:pymode_syntax_all
-let g:pymode_syntax_string_templates=g:pymode_syntax_all
-let g:pymode_syntax_doctests=g:pymode_syntax_all
-let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
-let g:pymode_syntax_builtin_types=g:pymode_syntax_all
-let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
-let g:pymode_syntax_docstrings=g:pymode_syntax_all
+let g:pymode_syntax = 1
+let g:pymode_syntax_slow_sync = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_print_as_function = g:pymode_syntax_all
+let g:pymode_syntax_highlight_async_await = g:pymode_syntax_all
+let g:pymode_syntax_highlight_equal_operator = g:pymode_syntax_all
+let g:pymode_syntax_highlight_stars_operator = g:pymode_syntax_all
+let g:pymode_syntax_highlight_self = g:pymode_syntax_all
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_string_formatting = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_syntax_string_format = g:pymode_syntax_all
+let g:pymode_syntax_string_templates = g:pymode_syntax_all
+let g:pymode_syntax_doctests = g:pymode_syntax_all
+let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
+let g:pymode_syntax_builtin_types = g:pymode_syntax_all
+let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
+let g:pymode_syntax_docstrings = g:pymode_syntax_all
+" ==================================================
 
