@@ -42,6 +42,16 @@ if [[ ! -d "${VIMHOME}/pack/plugins/start/vim-terraform" ]]; then
      git clone git@github.com:hashivim/vim-terraform.git ${VIMHOME}/pack/plugins/start/vim-terraform
 fi
 
+# install vim-airline
+if [[ ! -d "${VIMHOME}/pack/plugins/start/vim-airline" ]]; then
+     git clone git@github.com:vim-airline/vim-airline.git ${VIMHOME}/pack/plugins/start/vim-airline
+fi
+
+# install vim-fugitive
+if [[ ! -d "${VIMHOME}/pack/plugins/start/vim-fugitive" ]]; then
+     git clone git@github.com:tpope/vim-fugitive.git ${VIMHOME}/pack/plugins/start/vim-fugitive
+fi
+
 # rebuild helptags for everything just in case
 vim -c 'helptags ALL' +qall
 
