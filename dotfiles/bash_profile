@@ -1,6 +1,6 @@
 HISTFILESIZE=999999
 HISTSIZE=999999
-export PS1="@:\W$ "
+export PS1="\[\033[01;36m\]@:\W$ \[\033[0m\]"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
