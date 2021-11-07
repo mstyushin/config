@@ -7,6 +7,17 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export GOPATH=${HOME}/workspace/go
 export PATH=${PATH}:${HOME}/opt/go/bin:${GOPATH}/bin
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+if [[ ${OSTYPE} == "linux-gnu" ]]; then
+    alias ls="ls --color=auto"
+fi
+
 if [[ ${OSTYPE} == "darwin20" || ${OSTYPE} == "darwin19" ]]; then
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
   export M2_HOME=/opt/maven
@@ -66,4 +77,6 @@ fi
 if [[ -f ${HOME}/.profile ]]; then
   source ${HOME}/.profile
 fi
+
+alias ll="ls -la"
 
