@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "[INFO] Starting vim provisioner"
+
 WORKDIR=$( cd $( dirname ${BASH_SOURCE[0]})/../ && pwd )
 VIMHOME="${HOME}/.vim"
 
@@ -52,8 +54,44 @@ if [[ ! -d "${VIMHOME}/pack/plugins/start/vim-fugitive" ]]; then
      git clone git@github.com:tpope/vim-fugitive.git ${VIMHOME}/pack/plugins/start/vim-fugitive
 fi
 
+# install fzf
+if [[ ! -d "${VIMHOME}/pack/plugins/start/fzf" ]]; then
+     git clone git@github.com:junegunn/fzf.git ${VIMHOME}/pack/plugins/start/fzf
+fi
+
+# install fzf.vim
+if [[ ! -d "${VIMHOME}/pack/plugins/start/fzf.vim" ]]; then
+     git clone git@github.com:junegunn/fzf.vim.git ${VIMHOME}/pack/plugins/start/fzf.vim
+fi
+
+# TODO: detect OS and install fzf/rg automatically
+if ! hash fzf 2>/dev/null; then
+    echo "[WARNING] You don't seem to have fzf installed"
+    echo "[WARNING] Please install fzf using your OS package manager:"
+    echo "[WARNING] Mac OS X --------> brew install fzf"
+    echo "[WARNING] Debian   --------> sudo apt install fzf"
+    echo "[WARNING] Arch     --------> sudo pacman -S fzf"
+fi
+
+if ! hash rg 2>/dev/null; then
+    echo "[WARNING] You don't seem to have ripgrep installed"
+    echo "[WARNING] Please install ripgrep using your OS package manager:"
+    echo "[WARNING] Mac OS X --------> brew install ripgrep"
+    echo "[WARNING] Debian   --------> sudo apt install ripgrep"
+    echo "[WARNING] Arch     --------> sudo pacman -S ripgrep"
+fi
+
+if ! hash bat 2>/dev/null; then
+    echo "[WARNING] You don't seem to have bat installed"
+    echo "[WARNING] Please install bat using your OS package manager:"
+    echo "[WARNING] Mac OS X --------> brew install bat"
+    echo "[WARNING] Debian   --------> sudo apt install bat"
+    echo "[WARNING] Arch     --------> sudo pacman -S bat"
+fi
+
 # rebuild helptags for everything just in case
+echo "[INFO] Rebuilding helptags..."
 vim -c 'helptags ALL' +qall
 
-echo "vim has been provisioned"
+echo "[INFO] Vim has been provisioned"
 

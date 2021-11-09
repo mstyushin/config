@@ -152,4 +152,11 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
+" ==================================================
+
+" ==================================================
+" FZF config
+" ==================================================
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+nnoremap <C-g> :Rg<Cr>
 
