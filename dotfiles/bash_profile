@@ -20,7 +20,7 @@ fi
 
 if [[ ${OSTYPE} == "darwin20" || ${OSTYPE} == "darwin19" ]]; then
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
-  export M2_HOME=/opt/maven
+  export M2_HOME=${HOME}/opt/maven/default
   export SCALA_HOME=/opt/scala/current
   export GROOVY_HOME=/opt/groovy/default
   export ANDROID_SDK_ROOT=${HOME}/Library/Android/sdk
@@ -29,7 +29,7 @@ if [[ ${OSTYPE} == "darwin20" || ${OSTYPE} == "darwin19" ]]; then
   export PATH=/Applications/MySQLWorkbench.app/Contents/MacOS:${GRADLE_HOME}/bin:${GROOVY_HOME}/bin:/usr/local/go/bin:$JAVA_HOME/bin:$M2_HOME/bin:$SCALA_HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/sbt/current/bin:${HOME}/bin:~/.local/bin:$PATH
   
   # pip should only run if there is a virtualenv currently activated
-  export PIP_REQUIRE_VIRTUALENV=true
+  # export PIP_REQUIRE_VIRTUALENV=true
   
   [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
   
