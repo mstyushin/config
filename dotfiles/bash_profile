@@ -5,7 +5,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export GOPATH=${HOME}/workspace/go
-export PATH=${PATH}:${HOME}/opt/go/bin:${GOPATH}/bin
+export PATH=${PATH}:${HOME}/bin:${HOME}/opt/go/bin:${GOPATH}/bin
+export POETRY_HOME=${HOME}/opt/poetry
 
 # append to the history file, don't overwrite it
 shopt -s histappend
