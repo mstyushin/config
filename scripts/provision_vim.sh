@@ -6,7 +6,7 @@ WORKDIR=$( cd $( dirname ${BASH_SOURCE[0]})/../ && pwd )
 VIMHOME="${HOME}/.vim"
 
 # plugin versions go here
-VIMGO_V="v1.25"
+VIMGO_V="v1.28"
 PYTHONMODE_V="0.13.0"
 NERDTREE_V="6.10.16"
 
