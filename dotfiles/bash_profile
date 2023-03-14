@@ -17,6 +17,7 @@ shopt -s checkwinsize
 
 if [[ ${OSTYPE} == "linux-gnu" ]]; then
     alias ls="ls --color=auto"
+    export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 fi
 
 if [[ ${OSTYPE} == "darwin20" || ${OSTYPE} == "darwin19" ]]; then
