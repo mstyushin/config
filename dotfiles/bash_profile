@@ -10,6 +10,7 @@ export POETRY_HOME=${HOME}/opt/poetry
 #fuckyouhashicorp
 export VAGRANT_CHECKPOINT_DISABLE=yes
 export CHECKPOINT_DISABLE=yes
+VAGRANT_BOX_UPDATE_CHECK_DISABLE=yes
 
 # append to the history file, don't overwrite it
 shopt -s histappend
