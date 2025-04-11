@@ -64,6 +64,12 @@ if [[ ! -d "${VIMHOME}/pack/plugins/start/fzf.vim" ]]; then
      git clone git@github.com:junegunn/fzf.vim.git ${VIMHOME}/pack/plugins/start/fzf.vim
 fi
 
+# install vimwiki
+if [[ ! -d "${VIMHOME}/pack/plugins/start/vimwiki" ]]; then
+     git clone git@github.com:vimwiki/vimwiki.git ${VIMHOME}/pack/plugins/start/vimwiki
+fi
+
+
 # TODO: detect OS and install fzf/rg automatically
 if ! hash fzf 2>/dev/null; then
     echo "[WARNING] You don't seem to have fzf installed"
